@@ -1,1 +1,1 @@
-# Secure-_Messaging-_Algorithm
+# Secure Messaging Algorithm
