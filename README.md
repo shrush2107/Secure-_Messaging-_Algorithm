@@ -20,7 +20,7 @@ In this file:
 
 ### HuffmanCoding.java
 
-In this Java file:
+In this file:
 
 1. A Huffman coding algorithm is implemented for text compression and decompression.
 
