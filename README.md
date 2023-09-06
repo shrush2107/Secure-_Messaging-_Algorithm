@@ -2,7 +2,7 @@
 
 This project focus on the development of the messaging algorithm that combines Huffman coding for data compression and the Diffie-Hellman algorithm for secure key exchange.
 
-## DiffieHellman.java
+### DiffieHellman.java
 
 In this file:
 
@@ -18,7 +18,7 @@ In this file:
 
 6. Message decryption reverses this process, subtracting the key and decoding with Huffman.
 
-## HuffmanCoding.java
+### HuffmanCoding.java
 
 In this Java file:
 
