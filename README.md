@@ -2,45 +2,64 @@
 
 This project focus on the development of the messaging algorithm that combines Huffman coding for data compression and the Diffie-Hellman algorithm for secure key exchange.
 
-### DiffieHellman.java
+## Contents
 
-In this file:
+1. [Overview](#overview)
+2. [Diffie-Hellman Key Exchange](#diffie-hellman-key-exchange)
+3. [Huffman Coding](#huffman-coding)
+4. [Usage](#usage)
+5. [Dependencies](#dependencies)
 
-1. Two parties, Alice and Bob, perform the Diffie-Hellman key exchange to securely share encryption keys.
 
-2. They exchange public values generated based on a shared prime number and generator.
+## Overview
 
-3. They demonstrate the encryption and decryption of a message using these shared keys.
+This Java program consists of two main components:
 
-4. A simulation is included where an eavesdropper attempts to decrypt the message without the correct key.
+- **DiffieHellman.java**: Implements the Diffie-Hellman key exchange algorithm, allowing two parties to securely generate a shared secret key.
+- **HuffmanCoding.java**: Implements the Huffman coding algorithm for text compression and decompression.
 
-5. Message encryption involves adding a key to ASCII codes and encoding with Huffman coding.
+## Diffie-Hellman Key Exchange
 
-6. Message decryption reverses this process, subtracting the key and decoding with Huffman.
+The Diffie-Hellman key exchange algorithm is used to securely exchange secret keys over an unsecured communication channel. It includes the following steps:
 
-### HuffmanCoding.java
+1. Two parties, Alice and Bob exchange public values generated based on a shared prime number and generator.
+2. They demonstrate the encryption and decryption of a message using these shared keys.
+3. A simulation is included where an eavesdropper attempts to decrypt the message without the correct key.
+4. Message encryption involves adding a key to ASCII codes.
+5. Message decryption reverses this process, subtracting the key.
 
-In this file:
+## Huffman Coding
 
-1. A Huffman coding algorithm is implemented for text compression and decompression.
+Huffman coding is a lossless data compression algorithm. It includes the following steps:
 
-2. It defines a `HuffmanNode` class to represent nodes in the Huffman tree, with character and frequency attributes.
+1. Calculate the frequency of each character in the input text.
+2. Build a Huffman tree using the character frequencies.
+3. Generate binary codes for each character based on the tree.
+4. Encode the input text using the generated Huffman codes.
+5. Decode the encoded text to recover the original input text.
 
-3. The encode method:
-   - Calculates the frequency of each character in the input text.
-   - Constructs a Huffman tree based on character frequencies.
-   - Generates a mapping of characters to Huffman codes.
+## Usage
 
-4. The generateCode method recursively generates Huffman codes for characters in the tree.
+To use this program, follow these steps:
 
-5. The decode method:
-   - Takes an encoded text and the character-to-code mapping.
-   - Decodes the text based on the Huffman codes.
+1. Compile the Java files:
+   ```
+   javac DiffieHellman.java HuffmanCoding.java
+   ```
 
-6. In the main method:
-   - A sample input text is provided.
-   - Huffman codes are generated for the characters in the input text.
-   - The input text is encoded using the generated codes.
-   - The encoded text is then decoded back to the original text.
+2. Run the program:
+   ```
+   java DiffieHellman
+   ```
 
-The file demonstrates how Huffman coding can be used for efficient text compression and decompression, reducing the size of the encoded text while preserving its content.
+The program will perform the following steps:
+
+1. Generate Diffie-Hellman public and private keys for Alice and Bob.
+2. Exchange public keys between Alice and Bob.
+3. Encrypt and decrypt a sample message using the shared secret key.
+4. Demonstrate how an eavesdropper without the correct key cannot decrypt the message.
+
+## Dependencies
+
+This program uses the Java standard library and does not require any external dependencies.
+
